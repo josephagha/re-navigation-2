@@ -1,0 +1,91 @@
+.route-offers {
+  @include media-breakpoint-up('md') {
+    display: flex;
+  }
+}
+
+.route-offers__config {
+  width: 100%;
+  @include media-breakpoint-up('md') {
+    width: 30%;
+  }
+
+  @include media-breakpoint-up('lg') {
+    width: 40%;
+  }
+}
+
+.route-offers__cabins {
+  display: flex;
+  width: 100%;
+  @include media-breakpoint-up('md') {
+    width: 70%;
+  }
+
+  @include media-breakpoint-up('lg') {
+    width: 60%;
+  }
+}
+
+.route-offers__cabin {
+  cursor: pointer;
+  position: relative;
+  border: $border-width solid $grey;
+  width: 100%;
+  margin-right: -$border-width;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.route-offers__cabin:hover,
+.route-offers__cabin--active {
+  border-color: $green;
+  color: $green;
+  z-index: 5;
+}
+
+.route-offers__activate-button {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.route-offers__book-button {
+  display: none;
+  background: $green;
+  color: $white;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.route-offers__cabin--active {
+  .route-offers__activate-button {
+    display: none;
+  }
+
+  .route-offers__book-button {
+    display: block;
+    background: $green;
+    color: $white;
+  }
+}
+
+.route-offers__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.route-offers__price-wrapper {
+  margin-bottom: auto;
+}
+
+.route-offers__cabin-name {
+  @include set-fontsize('xs');
+  display: block;
+  padding: 0.7rem 1rem 0.3rem;
+}
+
+.route-offers__cabin-price {
+  padding: 0 1rem 0.5rem;
+}

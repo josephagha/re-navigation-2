@@ -1,0 +1,46 @@
+.ports {
+  display: flex;
+  width: 100%;
+}
+
+.ports__content {
+  width: 50%;
+  margin-right: 2rem;
+}
+
+.ports__content__item {
+  display: none;
+}
+
+.ports__content__item:first-child,
+.ports__content__item--active {
+  display: block;
+}
+
+.ports__timeline {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 2rem;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.ports__timeline__progress {
+  position: absolute;
+  height: 100%;
+  width: 0.6rem;
+  background: $grey;
+  top: 0;
+  left: 0;
+}
+
+.ports__timeline__item {
+  height: 100%;
+}
+
+.ports__timeline__item__title {
+  @include set-fontsize('l');
+  font-weight: bold;
+  color: $blue;
+}

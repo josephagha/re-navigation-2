@@ -1,0 +1,74 @@
+.snackbar {
+  position: fixed;
+  top: $navbar-height + 1rem;
+  left: 50%;
+  z-index: 99;
+  padding: 0 2rem;
+  width: 100%;
+  max-width: 60rem;
+}
+
+.snackbar--animated {
+  transition: all 0.5s;
+  transform: translateY(-60px) translateX(-50%);
+  opacity: 0;
+}
+
+.snackbar--show {
+  transform: translateY(0px) translateX(-50%);
+  opacity: 1;
+}
+
+.snackbar__content {
+  position: relative;
+  border-radius: $border-radius;
+  color: $white;
+  background: $blue;
+  padding: 1.2rem;
+  text-align: left;
+  @include add-shadow-s();
+}
+
+.snackbar__is--info {
+  @include add-icon-before('\F02C', 2.5rem, 1.3rem);
+}
+
+.snackbar--no-border-radius {
+  border-radius: 0;
+}
+
+.snackbar__content--with-close-btn {
+  padding-right: 5rem;
+}
+
+.snackbar--error {
+  // @include add-icon-before('\F02F', 2.5rem, 1.3rem);
+  background: $red;
+}
+
+.snackbar--warning {
+  // @include add-icon-before('\F02F', 2.5rem, 1.3rem);
+  background: $orange;
+}
+
+.snackbar--success {
+  // @include add-icon-before('\F006', 2.5rem, 1.3rem);
+  background: $green;
+}
+
+.snackbar--info {
+  background: $white;
+  color: $blue;
+}
+
+.snackbar__close {
+  @include add-icon-center('\F02E', 2rem);
+  cursor: pointer;
+  width: 2.6rem;
+  height: 2.6rem;
+  position: absolute;
+  right: 1.3rem;
+  // top: 50%;
+  // transform: translateY(-50%);
+  top: 1rem;
+}

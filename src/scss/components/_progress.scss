@@ -1,0 +1,29 @@
+.progress-group {
+  display: flex;
+  width: 100%;
+  .progress {
+    margin: 0 0.2rem;
+  }
+}
+
+.progress {
+  background: rgba(255, 255, 255, 0.3);
+  height: $border-width;
+  width: 100%;
+}
+
+.progress--vertical {
+  height: 100%;
+  width: $border-width;
+
+  .progress__fill {
+    height: 0%;
+    width: $border-width;
+  }
+}
+
+.progress__fill {
+  background: $white;
+  height: $border-width;
+  width: 0%;
+}

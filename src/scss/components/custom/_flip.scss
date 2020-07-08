@@ -1,0 +1,149 @@
+.flip-wrapper {
+  @include set-fontsize('xxl');
+  display: inline-block;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.flip {
+  box-shadow: 0 0.2rem 0.7rem 0 rgba(0, 0, 0, 0.15);
+  position: relative;
+  display: inline-block;
+  height: 4.6rem;
+  font-weight: bold;
+  line-height: 4.6rem;
+  border-radius: $border-radius;
+
+  @include media-breakpoint-up('sm') {
+    box-shadow: 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.15);
+    height: 5.6rem;
+    line-height: 5.6rem;
+  }
+  li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size: inherit;
+    .wrap {
+      display: block;
+      height: 100%;
+      perspective: 10rem;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: $border-width;
+      background-color: rgba(192, 192, 192, 0.3);
+      transform: translateY(-50%);
+    }
+    &.current {
+      position: relative;
+      opacity: 0;
+      width: 3rem;
+      @include media-breakpoint-up('sm') {
+        width: 4rem;
+      }
+    }
+    .up,
+    .down {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      perspective: 15rem;
+      .rotate {
+        position: relative;
+        top: 0;
+        height: 100%;
+      }
+      .inn {
+        position: relative;
+        top: 0;
+        height: 50%;
+        overflow: hidden;
+        background: #fff;
+        color: inherit;
+        width: 3rem;
+        text-align: center;
+        border-radius: $border-radius $border-radius 0 0;
+
+        @include media-breakpoint-up('sm') {
+          width: 4rem;
+        }
+        .lower-half {
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .down {
+      .inn {
+        top: 50%;
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+    }
+    &.active {
+      .up {
+        z-index: 4;
+      }
+      .down {
+        animation: zindex 0.3s 0.3s;
+        .rotate {
+          animation: activedown 0.3s 0.3s;
+        }
+        z-index: 4;
+      }
+    }
+    &.before {
+      .up {
+        animation: zindex 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+        .rotate {
+          animation: beforeup 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+        }
+        z-index: 0;
+      }
+      .down {
+        z-index: 0;
+        animation: show 0.3s;
+      }
+    }
+  }
+}
+@keyframes beforeup {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+@keyframes activedown {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes zindex {
+  0% {
+    z-index: 5;
+  }
+  100% {
+    z-index: 5;
+  }
+}
+@keyframes show {
+  0% {
+    z-index: 4;
+  }
+  100% {
+    z-index: 4;
+  }
+}

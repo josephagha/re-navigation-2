@@ -1,0 +1,85 @@
+.route-teaser {
+  @include media-breakpoint-up('sm') {
+    display: flex;
+  }
+}
+
+.route-teaser--standalone {
+  background: $light-grey;
+  border-radius: $border-radius;
+  @include add-shadow-s();
+}
+
+.route-teaser__image {
+  width: 100%;
+  @include media-breakpoint-up('md') {
+    width: 70%;
+  }
+
+  @include media-breakpoint-up('lg') {
+    width: 40%;
+  }
+}
+
+.route-teaser__content-wrapper {
+  display: flex;
+  flex: 1 1 60%;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  @media all and (-ms-high-contrast: none) {
+    display: block;
+  }
+}
+
+.route-teaser__content-wrapper--no-padding {
+  padding: 1.5rem 0;
+  @include media-breakpoint-up('sm') {
+    padding: 0;
+    padding-left: 2rem;
+  }
+}
+
+.route-teaser__text {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 1rem;
+  @include media-breakpoint-up('sm') {
+    display: block;
+  }
+  @include media-breakpoint-up('lg') {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.route-teaser__price-wrapper {
+  display: flex;
+  align-items: flex-end;
+  flex: 1 1 100%;
+}
+
+.route-teaser__price {
+  color: $green;
+  font-weight: bold;
+  @include set-fontsize('xxl');
+}
+
+.route-teaser__currency {
+  color: $green;
+  font-weight: bold;
+  @include set-fontsize('xl');
+}
+
+.route-teaser__action {
+  margin-top: 1rem;
+  white-space: nowrap;
+  margin-left: auto;
+  text-align: right;
+}
+
+.route-teaser__title {
+  @include set-fontsize('xl');
+  text-transform: uppercase;
+  font-weight: bold;
+}

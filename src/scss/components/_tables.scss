@@ -1,0 +1,68 @@
+.table {
+  border-collapse: separate;
+  display: table;
+  width: 100%;
+  border-spacing: 0 1rem;
+
+  > hr {
+    border: none;
+    height: 1rem;
+    margin: 0;
+  }
+}
+
+.table__body {
+  overflow: scroll;
+}
+
+.table__row {
+  background: $white;
+  border: $border-width solid $grey;
+  display: table-row;
+}
+
+.table__cell {
+  display: table-cell;
+  padding: 1rem 1.5rem;
+  border-top: $border-width solid $grey;
+  border-bottom: $border-width solid $grey;
+  border-left: $border-width solid $grey;
+  border-right: none;
+
+  &:first-child {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  &:last-child {
+    border-right: $border-width solid $grey;
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+}
+
+.table__row--active {
+  .table__cell {
+    border-color: $green;
+    border-left-color: $grey;
+
+    &:first-child {
+      border-left-color: $green;
+    }
+
+    &:last-child {
+      border-right-color: $green;
+    }
+  }
+}
+
+.table__row--header {
+  background: transparent;
+  .table__cell {
+    border: none;
+    @include set-fontsize('xs');
+    padding-bottom: 0;
+  }
+}
+
+.table__cell--with-arrow {
+  @include add-icon-after('\F011');
+}

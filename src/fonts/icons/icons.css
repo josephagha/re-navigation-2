@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'icons';
+  src: url('icons.eot'); /* IE9 Compat Modes */
+  src: url('icons.eot?iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('icons.woff2') format('woff2'), /* Edge 14+, Chrome 36+, Firefox 39+, some mobile */
+    url('icons.woff') format('woff'),  /* IE 9+, Edge, Firefox 3.6+, Chrome 5+, Safari 5.1+ */
+    url('icons.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('icons.svg') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="aicon-"], [class*=" aicon-"] {
+  font-family: 'icons' !important; /* Use !important to prevent issues with browser extensions that change fonts */
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  text-rendering: optimizeSpeed; /* Kerning and ligatures aren't needed */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.aicon-aida-home:before {
+  content: '\F000'
+}
+.aicon-airplane:before {
+  content: '\F015'
+}
+.aicon-alert-rounded:before {
+  content: '\F02F'
+}
+.aicon-arriving-departure:before {
+  content: '\F033'
+}
+.aicon-avatar-circle:before {
+  content: '\F012'
+}
+.aicon-avatar-couple:before {
+  content: '\F001'
+}
+.aicon-avatar-group:before {
+  content: '\F002'
+}
+.aicon-avatar:before {
+  content: '\F003'
+}
+.aicon-bookmark:before {
+  content: '\F010'
+}
+.aicon-burger-menu:before {
+  content: '\F027'
+}
+.aicon-cabin-door:before {
+  content: '\F01D'
+}
+.aicon-calendar-arrow:before {
+  content: '\F004'
+}
+.aicon-calendar:before {
+  content: '\F005'
+}
+.aicon-check:before {
+  content: '\F006'
+}
+.aicon-chevron-down:before {
+  content: '\F01F'
+}
+.aicon-chevron-left:before {
+  content: '\F022'
+}
+.aicon-chevron-right:before {
+  content: '\F011'
+}
+.aicon-chevron-up:before {
+  content: '\F023'
+}
+.aicon-credit-cards:before {
+  content: '\F017'
+}
+.aicon-document-circle:before {
+  content: '\F016'
+}
+.aicon-duration:before {
+  content: '\F036'
+}
+.aicon-facebook:before {
+  content: '\F007'
+}
+.aicon-globe:before {
+  content: '\F026'
+}
+.aicon-info-circle:before {
+  content: '\F02C'
+}
+.aicon-instagram:before {
+  content: '\F008'
+}
+.aicon-kussmund:before {
+  content: '\F038'
+}
+.aicon-lighthouse:before {
+  content: '\F009'
+}
+.aicon-logout:before {
+  content: '\F031'
+}
+.aicon-loupe:before {
+  content: '\F014'
+}
+.aicon-magazin:before {
+  content: '\F00A'
+}
+.aicon-map-path:before {
+  content: '\F01E'
+}
+.aicon-marker-round-waypoint:before {
+  content: '\F02B'
+}
+.aicon-marker-round:before {
+  content: '\F02A'
+}
+.aicon-marker:before {
+  content: '\F029'
+}
+.aicon-menu-dots:before {
+  content: '\F019'
+}
+.aicon-minus-circle:before {
+  content: '\F028'
+}
+.aicon-navigation:before {
+  content: '\F034'
+}
+.aicon-pencil:before {
+  content: '\F032'
+}
+.aicon-percentage:before {
+  content: '\F035'
+}
+.aicon-phone:before {
+  content: '\F021'
+}
+.aicon-pinterest:before {
+  content: '\F024'
+}
+.aicon-plane:before {
+  content: '\F00B'
+}
+.aicon-plus-circle:before {
+  content: '\F020'
+}
+.aicon-question-mark:before {
+  content: '\F013'
+}
+.aicon-schloss:before {
+  content: '\F039'
+}
+.aicon-shield-empty:before {
+  content: '\F01A'
+}
+.aicon-ship:before {
+  content: '\F00C'
+}
+.aicon-Ship2:before {
+  content: '\F037'
+}
+.aicon-test:before {
+  content: '\F00D'
+}
+.aicon-twitter:before {
+  content: '\F00E'
+}
+.aicon-warning:before {
+  content: '\F02D'
+}
+.aicon-wishlist:before {
+  content: '\F00F'
+}
+.aicon-x-circle:before {
+  content: '\F02E'
+}
+.aicon-x:before {
+  content: '\F030'
+}
+.aicon-youtube:before {
+  content: '\F025'
+}

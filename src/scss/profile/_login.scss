@@ -1,0 +1,60 @@
+.login-page__side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-page__side {
+  height: calc(100vh - #{$navbar-height});
+  height: calc(var(--vh, 1vh) * 100 - #{$navbar-height});
+  width: 100%;
+  position: relative;
+  @include media-breakpoint-up('md') {
+    width: 50%;
+  }
+}
+
+.login-page__login-side {
+  display: flex;
+  flex-wrap: wrap;
+  @include media-breakpoint-up('md') {
+    display: block;
+  }
+}
+
+.login-page__side--with-carousel {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-page__side-carousel {
+  flex: 1 1 100%;
+}
+
+.login-page__login-title-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.login-form__forgot-password {
+  margin-top: map-get($spacers, 4);
+}
+
+.login-form__button {
+  margin: map-get($spacers, 3) 0;
+}
+
+.login-page__login-footer {
+  @include media-breakpoint-up('sm') {
+    bottom: 0;
+    @include horizontal-center();
+  }
+}
+.login-page__login-form--center {
+  position: relative;
+  top: 30%;
+  transform: translateY(-30%);
+
+  @include media-breakpoint-up('md') {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

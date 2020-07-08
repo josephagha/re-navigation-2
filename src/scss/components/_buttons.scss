@@ -1,0 +1,184 @@
+@mixin set-font-size-width($size: 's', $diff: '0px') {
+  width: calc(
+    #{map-get($font-sizes-mobile, $size) *
+      map-get($font-line-heights-mobile, $size)} - #{$diff}
+  );
+
+  @include media-breakpoint-up('sm') {
+    width: calc(
+      #{map-get($font-sizes, $size) * map-get($font-line-heights, $size)} - #{$diff}
+    );
+  }
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  color: $filled-button-text-color;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: $filled-button-color-default;
+  border: $border-width solid transparent;
+  padding: $btn-padding 1.5em $btn-padding;
+  border-radius: $border-radius;
+  position: relative;
+  text-transform: uppercase;
+  @include set-font('m');
+
+  &:hover {
+    background-color: darken($filled-button-color-default, $btn-hover-darken);
+    color: $filled-button-text-color;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: $dark-grey;
+  }
+
+  > i {
+    display: none;
+    font-size: 1.5em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+a.btn.disabled,
+fieldset:disabled a.btn {
+  cursor: default;
+  pointer-events: none;
+}
+
+@each $name, $background in $filled-button-colors {
+  .btn--#{$name} {
+    background-color: $background;
+
+    &:hover {
+      background-color: darken($background, $btn-hover-darken);
+    }
+
+    &.btn--bordered {
+      color: $background;
+      border-color: currentColor;
+
+      &:hover {
+        color: darken($background, $btn-hover-darken);
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.btn--bordered {
+  background-color: transparent;
+  color: $filled-button-color-default;
+  border-color: currentColor;
+
+  &:hover {
+    background-color: transparent;
+    color: darken($filled-button-color-default, $btn-hover-darken);
+  }
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.btn--square {
+  &:before {
+    content: '\00a0';
+  }
+
+  border-radius: 0;
+  box-sizing: content-box;
+  overflow: hidden;
+  padding: $btn-padding;
+
+  @include set-font-size-width('m');
+  &.btn--border-thick {
+    @include set-font-size-width('m', $border-width-thick);
+  }
+
+  > i {
+    display: inline;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+  }
+
+  &.btn--small {
+    @include set-font-size-width('xs');
+    &.btn--border-thick {
+      @include set-font-size-width('xs', $border-width-thick);
+    }
+  }
+
+  &.btn--big {
+    @include set-font-size-width('xl');
+    &.btn--border-thick {
+      @include set-font-size-width('xl', $border-width-thick);
+    }
+  }
+}
+
+.btn--no-border-radius {
+  border-radius: 0;
+}
+
+.btn--circle {
+  border-radius: 5em;
+}
+
+.btn--border-thick {
+  padding-top: calc(
+    #{$btn-padding} + #{$border-width} - #{$border-width-thick}
+  );
+  padding-bottom: calc(
+    #{$btn-padding} + #{$border-width} - #{$border-width-thick}
+  );
+  border-width: $border-width-thick;
+}
+
+.btn--icon-left {
+  padding-left: 2.5em;
+  > i {
+    display: inline;
+    left: 0.5em;
+  }
+}
+
+.btn--icon-right {
+  padding-right: 2.5em;
+  > i {
+    display: inline;
+    right: 0.5em;
+  }
+}
+
+.btn--small {
+  @include set-fontsize('xs');
+}
+
+.btn--big {
+  @include set-fontsize('xl');
+}
+/* TODO: Safari gives the search-button a margin-top / margin-bottom of 2 px -> need to have a globally solution */
+.btn--no-margin {
+  margin: 0;
+}
+
+.btn--inherit {
+  font-size: inherit;
+  line-height: inherit;
+}

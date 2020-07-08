@@ -1,0 +1,31 @@
+aida-media-fader {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.media-fader__item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.media-fader--auto {
+  .media-fader__item {
+    transition: opacity 2s;
+  }
+  .media-fader__item--slow {
+    transition: opacity 3s;
+  }
+
+  .media-fader__item--fast {
+    transition: opacity 1s;
+  }
+}
+
+.media-fader__item--active {
+  opacity: 1;
+}

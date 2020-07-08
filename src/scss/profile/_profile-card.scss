@@ -1,0 +1,67 @@
+.profile-card {
+  position: relative;
+  text-align: start;
+
+  @include media-breakpoint-up('md') {
+    display: flex;
+  }
+}
+
+.profile-card__name-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border-bottom: 0.1rem solid $grey;
+
+  @include media-breakpoint-up('md') {
+    border-bottom: 0;
+    border-right: 0.1rem solid $grey;
+    width: 50%;
+  }
+}
+
+.profile-card__bubble {
+  height: 8rem;
+  width: 8rem;
+  background-color: $grey;
+  border-radius: 4rem;
+  font-size: map-get($font-sizes, 'xxl');
+  font-weight: bold;
+  line-height: 8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.profile-card__name {
+  margin-left: 1.5rem;
+}
+
+.profile-card__subtitle {
+  font-size: map-get($font-sizes, 'xs');
+}
+
+.profile-card__title {
+  font-size: map-get($font-sizes, 'm');
+}
+
+.profile-card__mail {
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-up('md') {
+    justify-content: center;
+  }
+}
+
+.profile-card__edit {
+  @include add-icon-after('\F032', 1.9rem, 0.5rem);
+
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  text-transform: uppercase;
+  font-size: map-get($font-sizes, 'xs');
+
+  &:after {
+    right: 0;
+  }
+}

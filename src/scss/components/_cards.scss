@@ -1,0 +1,63 @@
+.card {
+  border-radius: $border-radius;
+  background: $white;
+  width: 100%;
+  border: $border-width solid $grey;
+  overflow: hidden;
+}
+
+.card--no-border {
+  border: none;
+}
+
+.card--with-border-radius-lg {
+  border-radius: $border-radius-lg;
+}
+
+.card--with-shadow-s {
+  @include add-shadow-s();
+}
+
+.card--with-shadow-l {
+  @include add-shadow-l();
+}
+
+.card--with-shadow-xl {
+  @include add-shadow-xl();
+}
+
+.card__body {
+  position: relative;
+  padding: 1.5rem 2rem;
+}
+
+.card__body--bottom {
+  position: absolute;
+  bottom: 0;
+  padding: 1.5rem 1.5rem;
+}
+
+.card__title {
+  display: block;
+  font-weight: bold;
+  @include set-fontsize("l");
+  margin-bottom: 1rem;
+}
+
+.card__text {
+  margin: 0;
+}
+
+.card__icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  > i {
+    font-size: 3rem;
+  }
+}
+
+.card__footer {
+  border-top: $border-width solid $grey;
+  padding: 1rem 1.5rem;
+}

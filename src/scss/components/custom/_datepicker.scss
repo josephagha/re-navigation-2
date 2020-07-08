@@ -1,0 +1,226 @@
+.dp {
+  @include add-shadow-l();
+  background: $white;
+  display: none;
+  position: relative;
+  width: 100%;
+}
+
+.dp--show {
+  display: flex;
+}
+
+.dp__button {
+  @include reset-button();
+  color: $blue;
+  cursor: pointer;
+  height: 4.5em;
+  width: 5em;
+}
+
+.dp__button--left {
+  @include add-icon-center('\F022', 4em);
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.dp__button--right {
+  @include add-icon-center('\F011', 4em);
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+.dp__button--disabled {
+  color: $dark-grey;
+}
+
+.dp__button-reset {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateY(100%) translateX(-50%);
+}
+
+.dp__button-reset--enabled {
+  display: block;
+}
+
+.dp__month {
+  width: 100%;
+  border-right: 1px solid $grey;
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.dp__month__head {
+  border-bottom: $border-width solid $grey;
+  color: $blue;
+  line-height: 1em;
+  font-weight: bold;
+  padding: 1em 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.dp__month__head__month {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.dp__month__head__year {
+  display: block;
+  width: 100%;
+}
+
+.dp__month__days {
+  padding: 1em;
+}
+
+.dp__month__days__head__tile {
+  font-size: 0.8em;
+  flex: 1 0 14.2857%;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+.dp__month__days__body__tile {
+  color: $blue;
+  cursor: pointer;
+  flex: 1 0 14.2857%;
+  font-weight: bold;
+  margin: 0.1em 0;
+  text-align: center;
+
+  > span {
+    display: inline-block;
+    font-size: 0.9em;
+    height: 2.2em;
+    line-height: 2.2em;
+    width: 2.2em;
+  }
+}
+
+.dp__month__days__body__tile--hide {
+  visibility: hidden;
+  cursor: default;
+  pointer-events: none;
+}
+
+.dp__month__days__body__tile--other-month {
+  color: $dark-grey;
+}
+
+.dp__month__days__body__tile--disabled {
+  cursor: default;
+  color: $grey;
+}
+
+.dp__month__days__body__tile--in-range {
+  background: #e3f2dc;
+  color: $dark-grey;
+}
+
+.dp__month__days__body__tile--range-start {
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 50%, #e3f2dc 51%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#E3F2DC",GradientType=1);
+  color: $white;
+
+  > span:first-child {
+    background: #71bd51;
+    border-radius: 50%;
+    position: relative;
+
+    &:after {
+      width: 0;
+      height: 0;
+      border-top: 0.4em solid transparent;
+      border-bottom: 0.4em solid transparent;
+      border-left: 0.4em solid #71bc51;
+      content: ' ';
+      right: -0.34em;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.dp__month__days__body__tile--range-end {
+  background: linear-gradient(90deg, #e3f2dc 49%, hsla(0, 0%, 100%, 0) 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#E3F2DC",endColorstr="#00ffffff",GradientType=1);
+  color: $white;
+
+  > span:first-child {
+    background: #71bd51;
+    border-radius: 50%;
+    position: relative;
+
+    &:before {
+      width: 0;
+      height: 0;
+      border-top: 0.4em solid transparent;
+      border-bottom: 0.4em solid transparent;
+      border-right: 0.4em solid $green;
+      content: ' ';
+      left: -0.34em;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.dp__month__days__body__tile--range-first {
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 50%, #e3f2dc 51%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#E3F2DC",GradientType=1);
+  > span {
+    background: #e3f2dc;
+    border-radius: 50% 0 0 50%;
+  }
+}
+
+.dp__month__days__body__tile--range-last {
+  background: linear-gradient(90deg, #e3f2dc 49%, hsla(0, 0%, 100%, 0) 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#E3F2DC",endColorstr="#00ffffff",GradientType=1);
+  > span {
+    background: #e3f2dc;
+    border-radius: 0 50% 50% 0;
+  }
+}
+
+.dp__month__days__body__tile--range-end.dp__month__days__body__tile--range-first,
+.dp__month__days__body__tile--range-start.dp__month__days__body__tile--range-last {
+  background: none;
+  filter: none;
+}
+.dp__month__days__body__tile--range-first.dp__month__days__body__tile--range-last:not(.dp__month__days__body__tile--range-start):not(.dp__month__days__body__tile--range-end) {
+  background: none;
+  > span {
+    background: #e3f2dc;
+    border-radius: 50%;
+  }
+}
+.dp__month__days__body__tile--selected {
+  background: none;
+  color: $white;
+  > span {
+    background: #71bd51;
+    border-radius: 50%;
+    color: #fff;
+  }
+}
+
+.dp__month__days__head {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dp__month__days__body {
+  display: flex;
+  flex-wrap: wrap;
+}

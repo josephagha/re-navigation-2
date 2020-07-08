@@ -1,0 +1,11 @@
+.collapse--hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.collapse-content {
+  height: 100%;
+  // keep "overflow: auto", because then height will include margins of children
+  overflow: auto;
+}

@@ -1,0 +1,45 @@
+.list {
+  @include reset-list();
+  background: $white;
+  > li {
+    border: $border-width solid $grey;
+    margin-bottom: -$border-width;
+    padding: 0.7em 0.9em;
+  }
+}
+
+.list--small {
+  @include set-fontsize("xs");
+}
+
+.list--selectable {
+  @include add-shadow-l();
+  @include set-fontsize("input");
+  max-height: 28rem;
+  min-width: 25rem;
+  overflow-y: scroll;
+  z-index: 3;
+
+  > li {
+    cursor: pointer;
+    &.list__li--active {
+      color: $blue;
+    }
+
+    &.list__li--selected,
+    &:hover {
+      background: $light-grey;
+    }
+
+    &.list__li--disabled {
+      pointer-events: none;
+    }
+  }
+}
+
+.list--flush {
+  > li {
+    border-left: none;
+    border-right: none;
+  }
+}

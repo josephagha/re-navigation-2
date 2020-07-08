@@ -1,0 +1,78 @@
+.crop {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    content: '';
+  }
+}
+
+// works better with <aida-crop>
+.crop--flex {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.crop__item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  border: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.crop__item--portrait {
+  height: 100% !important;
+  width: auto !important;
+}
+
+.crop__dimmer::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 50%;
+
+  .crop--interactive:hover & {
+    top: 0;
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $crop-aspect-ratio in $crop-aspect-ratios {
+      $crop-aspect-ratio-x: nth($crop-aspect-ratio, 1);
+      $crop-aspect-ratio-y: nth($crop-aspect-ratio, 2);
+
+      .crop#{$infix}-#{$crop-aspect-ratio-x}by#{$crop-aspect-ratio-y} {
+        &::before {
+          padding-top: percentage($crop-aspect-ratio-y / $crop-aspect-ratio-x);
+        }
+
+        .crop__item {
+          @if ($crop-aspect-ratio-x / $crop-aspect-ratio-y) >= 16 / 9 {
+            height: auto;
+            width: 100%;
+          } @else {
+            height: 100%;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}

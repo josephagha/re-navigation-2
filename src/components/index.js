@@ -1,0 +1,23 @@
+// polyfills
+import 'core-js'
+import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'
+import '@webcomponents/webcomponentsjs/webcomponents-bundle.js'
+
+import './counter.js'
+import './countdown.js'
+import './flip.js'
+import './input-wrapper.js'
+import './layout.js'
+import './pax.js'
+import './price.js'
+import './custom-select.js'
+import './datepicker.js'
+import './media-fader.js'
+import './carousel.js'
+import './crop.js'
+import './toggle.js'
+import './collapse.js'
+import './modal.js'
+import './navbar.js'
+
+import './demo.js'

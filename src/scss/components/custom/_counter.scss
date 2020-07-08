@@ -1,0 +1,44 @@
+.counter {
+  display: flex;
+  width: 100%;
+  min-height: 5rem;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+}
+
+.counter--with-bottom-border {
+  border-bottom: $border-width solid #e5e5e5;
+}
+
+.counter__minus {
+  @include add-icon-center('\F028');
+  cursor: pointer;
+  width: 5rem;
+  font-size: 1.3rem;
+}
+
+.counter__plus {
+  @include add-icon-center('\F020');
+  cursor: pointer;
+  width: 5rem;
+  font-size: 1.3rem;
+}
+.counter__minus--disabled,
+.counter__plus--disabled {
+  color: $dark-grey;
+  cursor: default;
+}
+
+.counter__info {
+  width: 100%;
+}
+
+.counter__descr {
+  width: 100%;
+}
+
+.counter__value {
+  font-weight: bold;
+  @include set-fontsize('l');
+  margin: 0 1rem;
+}

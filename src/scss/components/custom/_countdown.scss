@@ -1,0 +1,29 @@
+aida-countdown {
+  display: flex;
+  justify-content: center;
+  margin: 0 -1.1rem;
+}
+
+.countdown__part {
+  margin: 0 0.5rem;
+  @include media-breakpoint-up('sm') {
+    margin: 0 1rem;
+  }
+}
+
+.countdown__flips {
+  display: flex;
+  > * {
+    margin: 0 0.1rem;
+    @include media-breakpoint-up('sm') {
+      margin: 0 0.2rem;
+    }
+  }
+}
+
+.countdown__label {
+  @include set-fontsize('xxs');
+  margin-top: 0.3rem;
+  text-align: center;
+  text-transform: uppercase;
+}

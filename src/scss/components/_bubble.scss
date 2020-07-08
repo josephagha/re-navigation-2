@@ -1,0 +1,101 @@
+@mixin centered-square {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  padding-top: 100%;
+  transform: translateY(-50%);
+}
+
+.bubble {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  color: $dark-blue;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+
+  &::before {
+    @include centered-square();
+
+    content: '';
+    z-index: -1;
+    border-radius: 999px;
+    background-color: $white;
+  }
+}
+
+.bubble__text {
+  padding: 1.5em;
+
+  @include media-breakpoint-up('md') {
+    padding: 1em;
+  }
+}
+
+// create a square positioning context so the inner bubble is positioned
+// relative to the outer bubble, not relative to the text
+.bubble__inner-wrapper {
+  @include centered-square();
+}
+
+.bubble__inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(55%, -35%);
+  color: $white;
+  font-size: 0.8em;
+  font-weight: normal;
+
+  @include media-breakpoint-up('md') {
+    transform: translate(55%, -45%);
+  }
+
+  &::before {
+    background-color: $dark-blue;
+  }
+
+  > .bubble__text {
+    padding: 0.6em;
+
+    @include media-breakpoint-up('md') {
+      padding: 0.7em;
+    }
+  }
+}
+
+@each $name, $background in $background-colors {
+  .bubble--#{$name} {
+    &::before {
+      background-color: $background;
+    }
+  }
+}
+
+@each $name, $color in $font-colors {
+  .bubble--font-color-#{$name} {
+    @include set-font-color($name);
+  }
+}
+
+.bubble--hero {
+  margin-right: 4rem;
+
+  > .bubble__text {
+    padding: 1.3em;
+
+    @include media-breakpoint-up('md') {
+      padding: 1.5em;
+    }
+  }
+
+  .bubble__inner {
+    transform: translate(50%, -50%);
+
+    @include media-breakpoint-up('md') {
+      transform: translate(50%, -20%);
+    }
+  }
+}

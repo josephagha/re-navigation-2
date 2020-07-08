@@ -1,0 +1,30 @@
+[class^='waveui-icon-']:before,
+[class*=' waveui-icon-']:before {
+  color: inherit;
+}
+
+.icon--light:before {
+  color: $icon-color-light;
+}
+
+.icon--dark:before {
+  color: $icon-color-dark;
+}
+
+.btn {
+  [class^='waveui-icon-'],
+  [class*=' waveui-icon-'] {
+    font-size: 1.3em;
+  }
+}
+
+.icon--info-modal {
+  @include media-breakpoint-down('md'){
+    font-size: map-get($font-sizes, 'xl');
+    top: .9rem;
+  }
+  font-size: map-get($font-sizes, 'xl');
+  position: absolute;
+  right: 1.5rem;
+  top: .7rem;
+}

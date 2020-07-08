@@ -1,0 +1,62 @@
+.profile__no-bookings {
+  margin-top: 3.5rem;
+}
+
+.profile__add-bookings {
+  height: 20rem;
+  border-radius: $border-radius;
+  border: 2px dashed $blue;
+  background-color: rgba(61, 162, 220, 0.05); // $blue
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile__add-bookings--disabled {
+  border-color: $grey;
+  background-color: rgba(229, 229, 229, 0.3); // $grey
+  height: auto;
+  padding: 2rem 1.5rem;
+  color: $darker-grey;
+  font-size: map-get($font-sizes, 'm');
+}
+
+.profile__add-bookings-icon {
+  color: $blue;
+  font-size: 5rem;
+}
+
+.profile__add-bookings-text {
+  color: $blue;
+  font-size: map-get($font-sizes, 'm');
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.profile__confirm-booking-button {
+  border-top: 1px solid $grey;
+  padding: 2rem;
+  width: 100%;
+}
+
+.profile__confirm-booking-button-myaida {
+  color: white !important;
+  text-align: center !important;
+  text-transform: none !important;
+}
+
+.profile__desktop-link {
+  display: none;
+
+  @include media-breakpoint-up('md') {
+    display: block;
+  }
+}
+
+.profile__mobile-link {
+  display: block;
+
+  @include media-breakpoint-up('md') {
+    display: none;
+  }
+}

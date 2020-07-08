@@ -1,0 +1,52 @@
+.expinet-travel-period {
+  border-left: $border-width solid $border-color;
+  margin: 0.6em 0;
+
+  .expinet-travel-period__date {
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+    transform: translateY(-50%);
+
+    &:last-child {
+      transform: translateY(50%);
+    }
+
+    &:before {
+      background: $green;
+      border-radius: 50%;
+      content: ' ';
+      height: 0.6rem;
+      width: 0.6rem;
+      position: absolute;
+      left: ($border-width / 2 + 0.3rem) * -1;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.expinet-status-circle {
+  border-radius: 50%;
+  display: block;
+  background: $green;
+  height: 0.6rem;
+  margin: 0.15rem;
+  width: 0.6rem;
+}
+
+.expinet-slash-separated {
+  > li {
+    position: relative;
+    &:after {
+      content: '/';
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &:last-child:after {
+      content: '';
+    }
+  }
+}

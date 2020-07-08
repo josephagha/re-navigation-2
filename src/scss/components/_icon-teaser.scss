@@ -1,0 +1,17 @@
+.icons-teaser {
+  text-align: center;
+}
+
+.icons-teaser__icon {
+  font-size: 4rem;
+}
+
+.icons-teaser__title {
+  color: $blue;
+  margin-top: 1rem;
+}
+
+.icons-teaser__subtitle {
+  margin-top: 0.3rem;
+  @include set-fontsize('xs');
+}
